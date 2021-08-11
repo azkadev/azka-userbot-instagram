@@ -6,9 +6,6 @@ var fs = require("fs");
 const client = new Insta.Client({
     disableReplyPrefix: true
 });
-client.on('connect', async function() {
-    console.log(`Logged in as !`);
-});
 client.on('messageCreate', async function(msg) {
     var text = msg.content;
     if (RegExp("/start", "i").exec(text)) {
