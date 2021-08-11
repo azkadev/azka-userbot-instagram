@@ -10,6 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "@androz2091/insta.js": "^1.6.1",
+    "instagram_mqtt": "^1.2.1",
+    "instagram-private-api": "^1.45.1",
     "node-fetch": "^2.6.1",
     "plugins-script": "^0.0.4"
   }
