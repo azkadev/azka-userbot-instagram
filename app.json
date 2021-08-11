@@ -1,0 +1,26 @@
+{
+  "name": "instagram userbot bot node js example heroku @azkadev",
+  "description": "hayy",
+  "keywords": [
+    "instagram-bot",
+    "instagram-bot-nodejs",
+    "userbot"
+  ],
+  "repository": "https://github.com/azkadev/azka-userbot-innstagram",
+  "env": {
+    "username": {
+      "description": "username your ig without @",
+      "required": true
+    },
+    "password": {
+      "description": "password your ig",
+      "required": true
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "stack": "heroku-20"
+}
