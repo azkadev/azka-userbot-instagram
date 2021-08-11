@@ -1,0 +1,16 @@
+{
+  "name": "instagram-bot",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "azkadev",
+  "license": "ISC",
+  "dependencies": {
+    "@androz2091/insta.js": "^1.6.1",
+    "node-fetch": "^2.6.1",
+    "plugins-script": "^0.0.4"
+  }
+}
