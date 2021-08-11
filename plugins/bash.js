@@ -4,8 +4,7 @@ var bash = {
   status: true,
   clue: ['Fungsi: menjalankan bash', 'Format: .bash ls'],
   regex: /^[!\/\.](?:ba)?sh (.*)/i,
-  run: async function (update) {
-    var msg = update[0]
+  run: async function (msg) {
     if (this.regex.exec(msg.content)) {
       exec(msg.content.replace(/([!\/\.](?:ba)?sh )/ig, ""), async function (error, stdout, stderr) {
         if (error) {

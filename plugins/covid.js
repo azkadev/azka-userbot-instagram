@@ -4,8 +4,7 @@ var covid = {
   status: true,
   clue: ['Fungsi: menjalankan mencari kasus covid', 'Format: .covid jakarta'],
   regex: /^[!\/\.]covid /gi,
-  run: async function (update) {
-    var msg = update[0]
+  run: async function (msg) {
     if (this.regex.exec(msg.content)) {
       try {
         msg.markSeen();

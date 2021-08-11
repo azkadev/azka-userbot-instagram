@@ -5,8 +5,7 @@ var gempadirasakan = {
   clue: ['Fungsi: mencari data gempadirasakan', 'Format: /gempadirasakan'],
   regex: /^[!\/\.]gempadirasakan$/i,
   only_admin: false,
-  run: async function (update) {
-    var msg = update[0]
+  run: async function (msg) {
     if (this.regex.exec(msg.content)) {
       try {
         msg.markSeen();

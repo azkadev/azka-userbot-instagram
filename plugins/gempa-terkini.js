@@ -4,8 +4,7 @@ var gempaterkini = {
   status: true,
   clue: ['Fungsi: mencari data gempaterkini', 'Format: /gempaterkini'],
   regex: /^[!\/\.]gempaterkini$/i,
-  run: async function (update) {
-    var msg = update[0]
+  run: async function (msg) {
     if (this.regex.exec(msg.content)) {
       try {
         msg.markSeen();

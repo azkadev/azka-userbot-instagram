@@ -2,10 +2,8 @@ var helloworld = {
   name: 'helloworld',
   status: true,
   clue: ['Fungsi: upload file', 'Format: hello'],
-  run: async function (update) {
-    var msg = update[0]
-    var text = msg.content;
-    if (RegExp("/hello", "i").exec(text)) {
+  run: async function (msg) {
+    if (RegExp("/hello", "i").exec(msg.content)) {
         return msg.reply("Hello world")
     }
   }

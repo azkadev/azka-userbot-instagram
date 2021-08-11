@@ -4,8 +4,7 @@ var exec = {
     clue: ['Fungsi: menjalankan ping', 'Format: .jsondump'],
     regex: /^[!\/\.]exec /gi,
     only_admin: true,
-    run: async function (update) {
-      var msg = update[0]
+    run: async function (msg) {
         if (this.regex.exec(msg.content)) {
             try {
                 var data = await eval(msg.content.replace(/^[!\/\.]exec /ig, ""))

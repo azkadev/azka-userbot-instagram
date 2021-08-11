@@ -2,6 +2,7 @@ const Insta = require('@androz2091/insta.js');
 var { plugins } = require("plugins-script");
 var plugin = new plugins("./plugins/");
 var { username, password } = process.env;
+var fs = require("fs");
 const client = new Insta.Client({
     disableReplyPrefix: true
 });
@@ -20,8 +21,27 @@ client.on('messageCreate', async function(msg) {
         }   else if (/([\/\.\!]help .*)/ig.exec(text)){
             var teks = await plugin.help(text.replace(/([\/\.\!]help )/ig,""))
             return msg.reply(teks)
-        } else  {
-            return await plugin.run([msg])
+        } else  {var plugins = []
+            fs.readdirSync(require("path").join(__dirname, "./plugins/")).forEach(function (file) {
+              var data = require("./plugins/" + file);
+              plugins.push(data)
+            })
+            var jumlah = 0
+            var data_plugin = []
+            plugins.forEach(function (plugin) {
+              for (var key in plugin) {
+                if (Object.prototype.hasOwnProperty.call(plugin, key)) {
+                  var data_json = plugin[key];
+                  data_plugin.push(data_json)
+                }
+              }
+            })
+            data_plugin.forEach(function (plugin) {
+              if (plugin.status) {
+                return plugin.run(msg)
+
+              }
+            })
         }
     }
 });
